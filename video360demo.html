@@ -8,14 +8,20 @@
 	<body>
 		<a-scene>
 			<a-assets>
-				<video id="video" loop="true" src="https://vixtuvr.github.io/360videodemo/video/FortressTossaOne_reduced.mp4" webkit-playsinLine/>
+				<video id="video" autoplay="false" loop="true" src="https://vixtuvr.github.io/360videodemo/video/FortressTossaOne_reduced.mp4" webkit-playsinLine/>
 			</a-assets>
-			<a-videosphere class="video" src="#video"></a-videosphere>
-			
+			<a-videosphere class="video" id="videosphere" src="#video"></a-videosphere>
+			<a-plane class="plane" id="planeone" color="green" height="2" width="2" position="0 1.6 -10">
+				<a-plane class="subplane" id="subplaneone" color="blue" height="1" width="1" position="0 0 0.1"></a-plane>
+			</a-plane>
+			<a-camera position="">
+				<a-cursor color="#FF0000"/>
+			</a-camera>
 		</a-scene>
 	</body>
 	<script> 
-			function videoPlay()
+			/*function videoPlay()
+			//Attemt to reach the class a-enter-vr-button just does not work
 			{
 				var els = document.querySelectorAll('#video');
 				Array.prototype.slice.call(els).forEach(function(el)
@@ -24,6 +30,24 @@
 				})
 			}
 
-			document.querySelector('#a-enter-vr-button').addEventListener('click', videoPlay);
+			document.querySelector('#a-enter-vr-button').addEventListener('click', videoPlay);*/
+			//Trying to acces scene entity for debugging purposes 
+			var scene = document.querySelector('a-scene');
+			console.log(scene);
+			//Trying to acces videsphere entity for debugging purposes
+			var videoSphere = document.querySelector("#video");
+			console.log(videoSphere);
+
+			var playButton = document.querySelector('.subplane');
+			console.log(playButton);
+			
+			document.querySelector('.subplane').addEventListener("mouseenter", function()
+			{
+				var els = document.querySelector('#video');
+				console.log(els);
+				console.log("On Mouse Enter Triggered");
+				els.setAttribute("autoplay", true);
+				
+			});
 	</script>
 </html>
