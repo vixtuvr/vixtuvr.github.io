@@ -12,6 +12,7 @@
 				<video id="video" autoplay="false" loop="true" src="https://vixtuvr.github.io/360videodemo/video/FortressTossaOne_reduced.mp4" webkit-playsinLine/>
 			</a-assets>
 			<a-videosphere class="video" id="videosphere" src="#video"></a-videosphere>
+			<a-entity class="mysphere" geometry="primitive: sphere" material="src: #video"></a-entity>
 			<a-plane class="plane" id="planeone" color="green" height="2" width="2" position="0 0 -10">
 				<a-plane class="subplane" id="subplaneone" color="blue" height="1" width="1" position="0 0 0.1"></a-plane>
 			</a-plane>
@@ -42,12 +43,12 @@
 			var playButton = document.querySelector('.subplane');
 			console.log(playButton);
 			
-			document.querySelector('.subplane').addEventListener("mouseenter", function()
+			document.querySelector('.subplane').addEventListener("click", function()
 			{
-				var els = document.querySelector('#videosphere');
+				var els = document.querySelector('#video');
 				console.log(els);
-				console.log("On Mouse Enter Triggered");
-				els.setAttribute("autoplay", true);
+				console.log("On Mouse Click Triggered");
+				//els.setAttribute("autoplay", true);
 				els.play();
 				
 			});
