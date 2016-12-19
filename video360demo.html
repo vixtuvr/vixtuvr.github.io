@@ -8,10 +8,22 @@
 	<body>
 		<a-scene>
 			<a-assets>
-				<video id="video360" crossorigin="anonymous" autoplay="" loop="true" src="https://vixtuvr.github.io/360videodemo/video/FortressTossaOne_reduced.mp4" webkit-playsinLine/>
+				<video id="video" loop="true" src="https://vixtuvr.github.io/360videodemo/video/FortressTossaOne_reduced.mp4" webkit-playsinLine/>
 			</a-assets>
-			<a-videosphere src="#video360"></a-videosphere>
+			<a-videosphere class="video" src="#video"></a-videosphere>
 			
 		</a-scene>
 	</body>
+	<script> 
+			function playVideo()
+			{
+				var els = document.querySelectorAll(.'video')
+				Array.prototype.slice.call(els).forEach(function(el)
+				{
+					el.components.material.material.map.image.play()
+				})
+			}
+
+			document.querySelector('.a-enter-vr-button').addEventListener('click', playVideo)
+		</script>
 </html>
