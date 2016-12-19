@@ -15,15 +15,15 @@
 		</a-scene>
 	</body>
 	<script> 
-			function playVideo()
+			function videoPlay()
 			{
-				var els = document.querySelectorAll(".video");
+				var els = document.querySelectorAll("#video");
 				Array.prototype.slice.call(els).forEach(function(el)
 				{
 					el.components.material.material.map.image.play();
 				})
 			}
 
-			document.querySelector(".a-enter-vr-button").addEventListener('click', playVideo);
-		</script>
+			document.querySelector("#a-enter-vr-button").addEventListener("click", videoPlay);
+	</script>
 </html>
