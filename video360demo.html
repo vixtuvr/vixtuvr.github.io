@@ -3,42 +3,30 @@
 	<head>
 		<meta charset="utf-8"/>
 		<meta name="apple-mobil-web-capable" content="yes"/>
-		<script src="https://aframe.io/releases/0.3.2/aframe.js"></script>
+		<script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
 	</head>
 
 	<body>
 		<a-scene>
 			<a-assets>
-				<video id="video" autoplay="false" loop="true" src="360videodemo/video/city-1280-mp4-30fps-x264-ffmpeg.mp4" webkit-playsinLine/>
+				<video id="video" autoplay="false" loop="true" src="video/city-1280-mp4-30fps-x264-ffmpeg.mp4" webkit-playsinLine/>
 			</a-assets>
+			<!--Define a videosphere for displaying the 360 video-->
 			<a-videosphere class="video" id="videosphere" src="#video"></a-videosphere>
-			<a-entity class="mysphere" geometry="primitive: sphere" radius="1" scale="-100 -100 -100" rotation="0 180 -180" position="0 1.6 0"
-				  material="src: #video"></a-entity>
-			<a-plane class="plane" id="planeone" color="green" height="2" width="2" position="0 0 -10">
+			<!--Try using a sphere primitive instead of a videosphere the result should be the same-->
+			<!--a-entity class="mysphere" geometry="primitive: sphere" radius="1" scale="-100 -100 -100" rotation="0 180 -180" position="0 1.6 0" material="src: #video"></a-entity-->
+			<a-plane class="plane" id="planeone" color="green" height="2" width="2" position="0 1.6 -10" >
 				<a-plane class="subplane" id="subplaneone" color="blue" height="1" width="1" position="0 0 0.1"></a-plane>
 			</a-plane>
 			<a-camera position="">
-				<a-cursor color="#FF0000">
-				</a-cursor>
+				<a-cursor color="#FF0000"/>
 			</a-camera>
 		</a-scene>
 	</body>
 	<script> 
-			/*function videoPlay()
-			//Attemt to reach the class a-enter-vr-button just does not work
-			{
-				var els = document.querySelectorAll('#video');
-				Array.prototype.slice.call(els).forEach(function(el)
-				{
-					el.components.material.material.map.image.play();
-				})
-			}
-
-			document.querySelector('#a-enter-vr-button').addEventListener('click', videoPlay);*/
-			//Trying to acces scene entity for debugging purposes 
 			var scene = document.querySelector('a-scene');
 			console.log(scene);
-			//Trying to acces videsphere entity for debugging purposes
+
 			var videoSphere = document.querySelector("#video");
 			console.log(videoSphere);
 
@@ -49,8 +37,8 @@
 			{
 				var els = document.querySelector('#video');
 				console.log(els);
-				console.log("On Mouse Click Triggered");
-				els.setAttribute("autoplay", true);
+				console.log("On Click event Triggered");
+				//els.setAttribute("autoplay", true);
 				els.play();
 				
 			});
