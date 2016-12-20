@@ -11,9 +11,9 @@
 			<a-assets>
 				<video id="video" autoplay="false" loop="true" src="360videodemo/video/city-1280-mp4-30fps-x264-ffmpeg.mp4" webkit-playsinLine/>
 			</a-assets>
-			<!--a-videosphere class="video" id="videosphere" src="#video"></a-videosphere>
+			<a-videosphere class="video" id="videosphere" src="#video"></a-videosphere>
 			<a-entity class="mysphere" geometry="primitive: sphere" radius="1" scale="-100 -100 -100" rotation="0 180 -180" position="0 1.6 0"
-				  material="src: #video"></a-entity-->
+				  material="src: #video"></a-entity>
 			<a-plane class="plane" id="planeone" color="green" height="2" width="2" position="0 0 -10">
 				<a-plane class="subplane" id="subplaneone" color="blue" height="1" width="1" position="0 0 0.1"></a-plane>
 			</a-plane>
@@ -39,7 +39,7 @@
 			var scene = document.querySelector('a-scene');
 			console.log(scene);
 			//Trying to acces videsphere entity for debugging purposes
-			var videoSphere = document.querySelector("#videosphere");
+			var videoSphere = document.querySelector("#video");
 			console.log(videoSphere);
 
 			var playButton = document.querySelector('.subplane');
