@@ -16,7 +16,7 @@
 		</style>
 	</head>
 
-	<body oncontextmenu="return false;" onkeypress="return disableCtrlKeyCombination(event);" onkeydown = "return
+	<body oncontextmenu="return mischandler" onkeypress="return disableCtrlKeyCombination(event);" onkeydown = "return
 		disableCtrlKeyCombination(event);">
 		<button id="play-button">Begin your experience</button>
 		<a-scene>
@@ -80,7 +80,10 @@
 	document.onmouseup = mousehandler;
 	document.onkeypress = disableCtrlKeyCombination;
 	document.onkeydown = disableCtrlKeyCombination;
-	
+	function mischandler(e)
+	{
+		return false;
+	}
 	function disableCtrlKeyCombination(e)
 	{
 		var forbiddenkeys = new Array("a", "i", "s", "c", "x", "u");
