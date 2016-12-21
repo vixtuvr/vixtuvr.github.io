@@ -21,10 +21,10 @@
 		<button id="play-button">Begin your experience</button>
 		<a-scene>
 			<a-assets>
-				<video id="video" src="360videodemo/video/TestOne.mp4" preload ="auto" autoplay="true" loop="true" crossorigin ="anonymous" webkit-playsinLine controls/>
+				<video id="video" src="360videodemo/video/SAMcut.mp4" preload ="auto" loop="true" crossorigin ="anonymous" webkit-playsinLine controls/>
 			</a-assets>
 			<!--Define a videosphere for displaying the 360 video-->
-			<a-videosphere class="video" id="videosphere" src="#video"></a-videosphere>
+			<a-videosphere class="video" id="videosphere" src="#video" autoplay="false"></a-videosphere>
 			<!--Try using a sphere primitive instead of a videosphere the result should be the same-->
 			<!--a-entity class="mysphere" geometry="primitive: sphere" radius="1" scale="-100 -100 -100" rotation="0 180 -180" position="0 1.6 0" material="src: #video"></a-entity-->
 			<!--a-plane class="plane" id="planeone" color="green" height="2" width="2" position="0 1.6 -10" >
