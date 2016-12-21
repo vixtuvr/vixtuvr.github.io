@@ -16,25 +16,39 @@
 		</style>
 	</head>
 
-	<body>
+	<body oncontextmenu="return false" onkeypress="return disableCtrlKeyCombination(event);" onkeydown = "return
+		disableCtrlKeyCombination(event);">
 		<button id="play-button">Begin your experience</button>
 		<a-scene>
 			<a-assets>
-				<video id="video" preload ="auto" crossorigin ="anonymous" autoplay="true" loop="true" src="360videodemo/video/TestThree19201080.mp4" webkit-playsinLine/>
+				<video id="video" src="360videodemo/video/TestThree19201080.mp4" preload ="auto" autoplay="false" loop="true" crossorigin ="anonymous" webkit-playsinLine controls/>
 			</a-assets>
 			<!--Define a videosphere for displaying the 360 video-->
-			<a-videosphere class="video" id="videosphere" src="#video"></a-videosphere>
+			<a-videosphere class="video" id="videosphere" src="#video" autoplay="false"></a-videosphere>
 			<!--Try using a sphere primitive instead of a videosphere the result should be the same-->
 			<!--a-entity class="mysphere" geometry="primitive: sphere" radius="1" scale="-100 -100 -100" rotation="0 180 -180" position="0 1.6 0" material="src: #video"></a-entity-->
-			<a-plane class="plane" id="planeone" color="green" height="2" width="2" position="0 1.6 -10" >
+			<!--a-plane class="plane" id="planeone" color="green" height="2" width="2" position="0 1.6 -10" >
 				<a-plane class="subplane" id="subplaneone" color="blue" height="1" width="1" position="0 0 0.1"></a-plane>
-			</a-plane>
+			</a-plane-->
 			<a-camera position="">
 				<a-cursor color="#FF0000"/>
 			</a-camera>
 		</a-scene>
 	</body>
 	<script> 
+			//Play button, required by browsers to grab user interaction before autoplaying videos.
+			document.querySelector('#play-button').addEventListener("click", function(e)
+			{
+				startStuff(); //launch the first interaction
+				this.style.display ='none';
+			}, false);
+		
+			function startStuff()
+			{
+				var theVideo = document.querySelector('#video');
+				theVideo.play();
+			}
+			/*
 			var scene = document.querySelector('a-scene');
 			console.log(scene);
 
@@ -52,6 +66,57 @@
 				//els.setAttribute("autoplay", true);
 				els.play();
 				
-			});
+			});*/
+	</script>
+<script type="text/javascript">
+	function mousehandler(e)
+	{
+		var myEvent =(isNS) ? e : event;
+		var eventbutton =(isNS) ? myevent.which : myevent.button;
+		if((eventbutton == 2) || (eventbutton == 3)) return false;
+	}
+	document.oncontextmenu = mischandler;
+	document.onmousedown = mousehandler;
+	document.onmouseup = mousehandler;
+	document.onkeypress = disableCtrlKeyCombination;
+	document.onkeydown = disableCtrlKeyCombination;
+	
+	function disableCtrlKeyCombination(e)
+	{
+		var forbiddenkeys = new Array("a", "i", "s", "c", "x", "u");
+		var key;
+		var isCtrl;
+		if(window.event)
+		{
+			key = window.event.keyCode;//Internet explorer
+			if(window.event.ctrlkey)
+			{
+				isCtrl = true;
+			else
+				isCtlr = false;
+			}
+				
+		}
+		else
+		{
+			key = e.which;//Mozilla Firefox
+			if(e.ctrlkey)
+				isCtrl= true;
+			else
+				isCtrl = false;
+		}
+		if(true)
+		{
+			for(i = 0; i < forbiddenkeys.length; i++)
+			{
+				//case insensitive comparation
+				if(forbiddenkeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase())
+				{
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 	</script>
 </html>
