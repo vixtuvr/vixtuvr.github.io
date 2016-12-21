@@ -16,7 +16,7 @@
 		</style>
 	</head>
 
-	<body oncontextmenu="return mischandler(event);" onkeypress="return disableCtrlKeyCombination(event);" onkeydown = "return
+	<body onkeypress="return disableCtrlKeyCombination(event);" onkeydown = "return
 		disableCtrlKeyCombination(event);">
 		<button id="play-button">Begin your experience</button>
 		<a-scene>
@@ -78,6 +78,10 @@
 	document.oncontextmenu = mischandler(){
 		return false;
 	};
+	
+	window.addEventListener('contextmenu', mischandler(e){
+				e.preventDefault();
+	}, false);
 	document.onmousedown = mousehandler;
 	document.onmouseup = mousehandler;
 	document.onkeypress = disableCtrlKeyCombination;
