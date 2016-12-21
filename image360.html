@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title> 360 degrees Image Viewer</title>
-	<meta name="description" content="360 degrees Image Viewer - VRweb ">
-	<script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
-	<script src="lib/kframe.min.js"></script>
-	<script src="image360demo/components/set-image.js"></script>
-	<script src="image360demo/components/update-raycaster.js"></script>
-</head>
-<body>
-	
-	<a-scene class="fullscreen" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
-		<a-assets>
-			<audio id="click-sound" src="image360demo/audio/MenuSelect.ogg"></audio>
-			<img id="GuitartOne" crossorigin="anonymous" src="image360demo/img/GuitartOne.jpg">
-			<img id="GuitartOne-thumb" crossorigin="anonymous" src="image360demo/img/GuitartOne-thumb.png">
-			<img id="GuitartTwo" crossorigin="anonymous" src="image360demo/img/GuitartTwo.jpg">
-			<img id="GuitartTwo-thumb" crossorigin="anonymous" src="image360demo/img/GuitartTwo-thumb.png">
-			<img id="GuitartThree" crossorigin="anonymous" src="image360demo/img/GuitartThree.jpg">
-			<img id="GuitartThree-thumb" crossorigin="anonymous" src="image360demo/img/GuitartThree-thumb.png">
-			<script id="link" type="text/nunjucks">
-				<a-plane class="link" height="1" width="1" material="shader: flat; src: {{ thumb }}" 
-					event-set__1="_event: mousedown; scale: 1 1 1"
-					event-set__2="_event: mouseup; scale: 1.2 1.2 1"
-					event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
-					event-set__4="_event: mouseleave; scale: 1 1 1"
-					set-image="on: click; target: #image; src: {{ src }}"
-					sound="on: click; src: #click-sound"
-					update-raycaster="#cursor"></a-plane>
-			</script>
-		</a-assets>
-		<a-sky id="image" radius="10" src="#GuitartThree" data-set-image-fade-setup="true" animation__fade=""></a-sky>
-		<a-entity id="links" layout="layout: line; margin: 1.5" position= "-1.5 1 -3">
-			<a-entity template="src: #link" id="buttonone" data-src="#GuitartOne" data-thumb="#GuitartOne-thumb"></a-entity>
-			<a-entity template="src: #link" id="buttontwo" data-src="#GuitartTwo" data-thumb="#GuitartTwo-thumb"></a-entity>
-			<a-entity template="src: #link" id="buttonthree" data-src="#GuitartThree" data-thumb="#GuitartThree-thumb"></a-entity>
-		</a-entity>
-		<a-entity id="maincamera" camera="" look-controls="" position="" rotation="" scale="" visible="">
-			<a-cursor id="cursor" animation__click="property: scale; startEvents: click; from 0.1 0.1 0.1; to: 1 1 1; dur: 150" animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500" event-set__1="_event:mouseenter; color: springgreen" event-set__2="_event: mouseleave; color: black" raycaster="objects: .link:" material="" cursor="" geometry="" position="" rotation="" scale="" visible="" color="black">
-			</a-cursor>
-		</a-entity>
-	</a-scene>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/nunjucks/2.3.0/nunjucks.min.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>360 degrees Image Gallery</title>
+    <meta name="description" content="360&deg; Image Gallery - A-Frame">
+    <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+    <script src="lib/kframe.min.js"></script>
+    <script src="/components/set-image.js"></script>
+    <script src="/components/update-raycaster.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="guitartone" crossorigin="anonymous" src="/img/GuitartOne.jpg">
+        <img id="guitartone-thumb" crossorigin="anonymous" src="/img/thumb-city.jpg">
+        <img id="guitarttwo" crossorigin="anonymous" src="/img/GuitartTwo.jpg">
+        <img id="guitarttwo-thumb" crossorigin="anonymous" src="/img/GuitartTwo-thumb.jpg">
+        <audio id="click-sound" crossorigin="anonymous" src="/audio/MenuSelect.ogg"></audio>
+        <img id="guitartthree" crossorigin="anonymous" src="/img/GuitartThree.jpg">
+        <img id="guitartthree-thumb" crossorigin="anonymous" src="/img/GuitartThree-thumb.jpg">
+        <!-- Image link template to be reused. -->
+        <script id="link" type="text/nunjucks">
+          <a-plane class="link" height="1" width="1"
+            material="shader: flat; src: {{ thumb }}"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+            event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+            set-image="on: click; target: #image-360; src: {{ src }}"
+            sound="on: click; src: #click-sound"
+            update-raycaster="#cursor"></a-plane>
+        </script>
+      </a-assets>
+
+      <!-- 360-degree image. -->
+      <a-sky id="image-360" radius="10" src="#guitartone"></a-sky>
+
+      <!-- Image links. -->
+      <a-entity id="links" layout="type: line; margin: 1.5" position="0 1  -4">
+        <a-entity template="src: #link" data-src="#guitartone" data-thumb="#guitartone-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#guitarttwo" data-thumb="#guitarttwo-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#guitartthree" data-thumb="#guitartthree-thumb"></a-entity>
+      </a-entity>
+
+      <!-- Camera + cursor. -->
+      <a-entity camera look-controls>
+        <a-cursor id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          raycaster="objects: .link"></a-cursor>
+      </a-entity>
+    </a-scene>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nunjucks/2.3.0/nunjucks.min.js"></script>
+  </body>
 </html>
+
