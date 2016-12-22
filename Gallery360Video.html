@@ -4,24 +4,24 @@
     <meta charset="utf-8">
     <meta name="apple-mobil-web-capable" content="yes">
     <title>360 degrees Video Gallery</title>
-    <meta name="description" content="360 º Image Gallery - A-Frame">
+    <meta name="description" content="360 º Video Tossa Mar - A-Frame">
     <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
-    <script src="lib/kframe.min.js"></script>
-    <script src="components/set-image.js"></script>
-    <script src="components/update-raycaster.js"></script>
+    <script src="360VideoGallery/lib/kframe.min.js"></script>
+    <script src="360VideoGallery/components/set-image.js"></script>
+    <script src="360VideoGallery/components/update-raycaster.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
-        <img id="landscape-thumb" crossorigin="anonymous" src="img/Landscape_thumb.png">
-        <img id="fortress-thumb" crossorigin="anonymous" src="img/Fortress_thumb.png">
-        <img id="church-thumb" crossorigin="anonymous" src="img/Church_thumb.png">
+        <img id="landscape-thumb" crossorigin="anonymous" src="360VideoGallery/img/Landscape_thumb.png">
+        <img id="fortress-thumb" crossorigin="anonymous" src="360VideoGallery/img/Fortress_thumb.png">
+        <img id="church-thumb" crossorigin="anonymous" src="360VideoGallery/img/Church_thumb.png">
 
-        <audio id="click-sound" crossorigin="anonymous" src="audio/MenuSelect.ogg"></audio>
+        <audio id="click-sound" crossorigin="anonymous" src="360VideoGallery/audio/MenuSelect.ogg"></audio>
 
-        <video id="landscape" src="video/TossaMarLandscape.mp4" preload="auto" loop="true" crossorigin="anonymous" webkit-playsinline="true" autoplay="false">
-        <video id="fortress" src="video/FortressTossaOne.mp4" preload="auto" loop="true" crossorigin="anonymous" webkit-playsinline="true" autoplay="false">
-        <video id="church" src="video/TossaMarGhoticChurchMain.mp4" preload="auto" loop="true" crossorigin="anonymous" webkit-playsinline="true" autoplay="false">
+        <video id="landscape" src="360VideoGallery/video/TossaMarLandscape.mp4" preload="auto" loop="true" crossorigin="anonymous" webkit-playsinline="true" autoplay="false">
+        <video id="fortress" src="360VideoGallery/video/FortressTossaOne.mp4" preload="auto" loop="true" crossorigin="anonymous" webkit-playsinline="true" autoplay="false">
+        <video id="church" src="360VideoGallery/video/TossaMarGhoticChurchMain.mp4" preload="auto" loop="true" crossorigin="anonymous" webkit-playsinline="true" autoplay="false">
 
         <!-- Image link template to be reused. -->
         <script id="link" type="text/nunjucks">
