@@ -8,10 +8,10 @@
     <script type="text/javascript" src="https://aframe.io/releases/0.4.0/aframe.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nunjucks/2.3.0/nunjucks.min.js"></script>
     <!--script type="text/javascript" src="stereo/examples/build.js"></script-->
-    <script type="text/javascript" src="lib/kframe.min.js"></script>
-    <script type="text/javascript" src="lib/vixtuvrEngine.js"></script>
-    <script type="text/javascript" src="components/set-image.js"></script>
-    <script type="text/javascript" src="components/update-raycaster.js"></script>
+    <script type="text/javascript" src="TossaVixtuTour360/lib/kframe.min.js"></script>
+    <script type="text/javascript" src="TossaVixtuTour360/lib/vixtuvrEngine.js"></script>
+    <script type="text/javascript" src="TossaVixtuTour360/components/set-image.js"></script>
+    <script type="text/javascript" src="TossaVixtuTour360/components/update-raycaster.js"></script>
 
      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,100,600">
 
@@ -48,94 +48,94 @@
 
         <!--Image to load in a plane to be used as a button selector-->
 
-        <img id="circleanim" src="img/0001.png">
+        <img id="circleanim" src="TossaVixtuTour360/img/0001.png">
 
         <!--End Image assets-->
 
          <!--Audio assets-->
         
-        <audio id="click-sound" crossorigin="anonymous" src="audio/MenuSelect.ogg"></audio>
+        <audio id="click-sound" crossorigin="anonymous" src="TossaVixtuTour360/audio/MenuSelect.ogg"></audio>
         
         <!--End Audio assets-->
 
         <!--Tossa map model assets-->
         
-        <a-asset-item id="tossamainmapmodel" src="models/TossaMainMap.obj"></a-asset-item>
-        <a-asset-item id="tossamainmapmaterial" src="models/TossaMainMap.mtl"></a-asset-item>
+        <a-asset-item id="tossamainmapmodel" src="TossaVixtuTour360/models/TossaMainMap.obj"></a-asset-item>
+        <a-asset-item id="tossamainmapmaterial" src="TossaVixtuTour360/models/TossaMainMap.mtl"></a-asset-item>
         
         <!--Tossa map model assets end-->
 
         <!--Building Models assets-->
         
-        <a-asset-item id="fortresswallmodel" src="models/Wall.obj"></a-asset-item>
-        <a-asset-item id="fortresswallmaterial" src="models/Wall.mtl"></a-asset-item>
+        <a-asset-item id="fortresswallmodel" src="TossaVixtuTour360/models/Wall.obj"></a-asset-item>
+        <a-asset-item id="fortresswallmaterial" src="TossaVixtuTour360/models/Wall.mtl"></a-asset-item>
 
-        <a-asset-item id="churchmodel" src="models/Church.obj"></a-asset-item>
-        <a-asset-item id="churchmaterial" src="models/Church.mtl"></a-asset-item>
+        <a-asset-item id="churchmodel" src="TossaVixtuTour360/models/Church.obj"></a-asset-item>
+        <a-asset-item id="churchmaterial" src="TossaVixtuTour360/models/Church.mtl"></a-asset-item>
 
-        <a-asset-item id="fortresstowermodel" src="models/FortressTower.obj"></a-asset-item>
-        <a-asset-item id="fortresstowermaterial" src="models/FortressTower.mtl"></a-asset-item>
+        <a-asset-item id="fortresstowermodel" src="TossaVixtuTour360/models/FortressTower.obj"></a-asset-item>
+        <a-asset-item id="fortresstowermaterial" src="TossaVixtuTour360/models/FortressTower.mtl"></a-asset-item>
 
-        <a-asset-item id="granadoscompmodel" src="models/GranadosComp.obj"></a-asset-item>
-        <a-asset-item id="granadoscompmaterial" src="models/GranadosComp.mtl"></a-asset-item>
+        <a-asset-item id="granadoscompmodel" src="TossaVixtuTour360/models/GranadosComp.obj"></a-asset-item>
+        <a-asset-item id="granadoscompmaterial" src="TossaVixtuTour360/models/GranadosComp.mtl"></a-asset-item>
         
-        <a-asset-item id="dianadummybuildingmodel" src="models/DianaHarryPotter.obj"></a-asset-item>
-        <a-asset-item id="dianadummybuildingmaterial" src="models/DianaHarryPotter.mtl"></a-asset-item>
+        <a-asset-item id="dianadummybuildingmodel" src="TossaVixtuTour360/models/DianaHarryPotter.obj"></a-asset-item>
+        <a-asset-item id="dianadummybuildingmaterial" src="TossaVixtuTour360/models/DianaHarryPotter.mtl"></a-asset-item>
         
-        <a-asset-item id="dianadummyplanemodel" src="models/DianaDummyPlane.obj"></a-asset-item>
-        <a-asset-item id="dianadummyplanematerial" src="models/DianaDummyPlane.mtl"></a-asset-item>
+        <a-asset-item id="dianadummyplanemodel" src="TossaVixtuTour360/models/DianaDummyPlane.obj"></a-asset-item>
+        <a-asset-item id="dianadummyplanematerial" src="TossaVixtuTour360/models/DianaDummyPlane.mtl"></a-asset-item>
         
-        <a-asset-item id="cookingmuseumbuildingmodel" src="models/CookingMuseumBuilding.obj"></a-asset-item>
-        <a-asset-item id="cookingmuseumbuildingmaterial" src="models/CookingMuseumBuilding.mtl"></a-asset-item>
+        <a-asset-item id="cookingmuseumbuildingmodel" src="TossaVixtuTour360/models/CookingMuseumBuilding.obj"></a-asset-item>
+        <a-asset-item id="cookingmuseumbuildingmaterial" src="TossaVixtuTour360/models/CookingMuseumBuilding.mtl"></a-asset-item>
         
-        <a-asset-item id="dummyonemodel" src="models/DummyOne.obj"></a-asset-item>
-        <a-asset-item id="dummyonematerial" src="models/DummyOne.mtl"></a-asset-item>
+        <a-asset-item id="dummyonemodel" src="TossaVixtuTour360/models/DummyOne.obj"></a-asset-item>
+        <a-asset-item id="dummyonematerial" src="TossaVixtuTour360/models/DummyOne.mtl"></a-asset-item>
         
-        <a-asset-item id="dummytwomodel" src="models/DummyTwo.obj"></a-asset-item>
-        <a-asset-item id="dummytwomaterial" src="models/DummyTwo.mtl"></a-asset-item>
+        <a-asset-item id="dummytwomodel" src="TossaVixtuTour360/models/DummyTwo.obj"></a-asset-item>
+        <a-asset-item id="dummytwomaterial" src="TossaVixtuTour360/models/DummyTwo.mtl"></a-asset-item>
         
         <!--End Building Models assets-->
 
         <!--Buttons models assets-->
         
-        <a-asset-item id="tossabuttonmodel" src="models/TossaButton.obj"></a-asset-item>
-        <a-asset-item id="tossabuttonmaterial" src="models/TossaButton.mtl"></a-asset-item>
+        <a-asset-item id="tossabuttonmodel" src="TossaVixtuTour360/models/TossaButton.obj"></a-asset-item>
+        <a-asset-item id="tossabuttonmaterial" src="TossaVixtuTour360/models/TossaButton.mtl"></a-asset-item>
         
         <!--Buttons models assets end-->
 
         <!--Text models assets-->
 
-        <a-asset-item id="tossamartextmodel" src="models/TossaMarText.obj"></a-asset-item>
+        <a-asset-item id="tossamartextmodel" src="TossaVixtuTour360/models/TossaMarText.obj"></a-asset-item>
         
-        <a-asset-item id="tossamartextmaterial" src="models/TossaMarText.mtl"></a-asset-item>
+        <a-asset-item id="tossamartextmaterial" src="TossaVixtuTour360/models/TossaMarText.mtl"></a-asset-item>
         
-        <a-asset-item id="oldchurchtextmodel" src="models/OldChurchText.obj"></a-asset-item>
+        <a-asset-item id="oldchurchtextmodel" src="TossaVixtuTour360/models/OldChurchText.obj"></a-asset-item>
         
-        <a-asset-item id="oldchurchtextmaterial" src="models/OldChurchText.mtl"></a-asset-item>
+        <a-asset-item id="oldchurchtextmaterial" src="TossaVixtuTour360/models/OldChurchText.mtl"></a-asset-item>
         
-        <a-asset-item id="granadostextmodel" src="models/GranadosText.obj"></a-asset-item>
+        <a-asset-item id="granadostextmodel" src="TossaVixtuTour360/models/GranadosText.obj"></a-asset-item>
         
-        <a-asset-item id="granadostextmaterial" src="models/GranadosText.mtl"></a-asset-item>
+        <a-asset-item id="granadostextmaterial" src="TossaVixtuTour360/models/GranadosText.mtl"></a-asset-item>
         
-        <a-asset-item id="dianatextmodel" src="models/DianaText.obj"></a-asset-item>
+        <a-asset-item id="dianatextmodel" src="TossaVixtuTour360/models/DianaText.obj"></a-asset-item>
         
-        <a-asset-item id="dianatextmaterial" src="models/DianaText.mtl"></a-asset-item>
+        <a-asset-item id="dianatextmaterial" src="TossaVixtuTour360/models/DianaText.mtl"></a-asset-item>
         
-        <a-asset-item id="fortresstextmodel" src="models/FortressText.obj"></a-asset-item>
+        <a-asset-item id="fortresstextmodel" src="TossaVixtuTour360/models/FortressText.obj"></a-asset-item>
         
-        <a-asset-item id="fortresstextmaterial" src="models/FortressText.mtl"></a-asset-item>
+        <a-asset-item id="fortresstextmaterial" src="TossaVixtuTour360/models/FortressText.mtl"></a-asset-item>
         
-        <a-asset-item id="cookingmuseumtextmodel" src="models/CookingMuseumText.obj"></a-asset-item>
+        <a-asset-item id="cookingmuseumtextmodel" src="TossaVixtuTour360/models/CookingMuseumText.obj"></a-asset-item>
         
-        <a-asset-item id="cookingmuseumtextmaterial" src="models/CookingMuseumText.mtl"></a-asset-item>
+        <a-asset-item id="cookingmuseumtextmaterial" src="TossaVixtuTour360/models/CookingMuseumText.mtl"></a-asset-item>
         
-        <a-asset-item id="mainmaptextmodel" src="models/MainMapText.obj"></a-asset-item>
+        <a-asset-item id="mainmaptextmodel" src="TossaVixtuTour360/models/MainMapText.obj"></a-asset-item>
         
-        <a-asset-item id="mainmaptextmaterial" src="models/MainMapText.mtl"></a-asset-item>
+        <a-asset-item id="mainmaptextmaterial" src="TossaVixtuTour360/models/MainMapText.mtl"></a-asset-item>
         
-        <a-asset-item id="quitapptextmodel" src="models/QuitAppText.obj"></a-asset-item>
+        <a-asset-item id="quitapptextmodel" src="TossaVixtuTour360/models/QuitAppText.obj"></a-asset-item>
         
-        <a-asset-item id="quitapptextmaterial" src="models/QuitAppText.mtl"></a-asset-item>
+        <a-asset-item id="quitapptextmaterial" src="TossaVixtuTour360/models/QuitAppText.mtl"></a-asset-item>
 
         <!--Text models assets end-->
 
@@ -157,17 +157,17 @@
         <!--Video assets-->
          
         <!--Video for Fortress and Ghotic church scenes-->
-        <video class="Fortress" id="fortressvideo" src="video/FortressTossaOne.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
-        <video id="landscapevideo" src="video/TossaMarLandscape.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
-        <video class="Fortress" id="ghoticchurchvideo" src="video/TossaMarGhoticChurchMain.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
-        <video class="Fortress" id="fortressvideo" src="video/FortressTossaOne.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
+        <video class="Fortress" id="fortressvideo" src="TossaVixtuTour360/video/FortressTossaOne.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
+        <video id="landscapevideo" src="TossaVixtuTour360/video/TossaMarLandscape.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
+        <video class="Fortress" id="ghoticchurchvideo" src="TossaVixtuTour360/video/TossaMarGhoticChurchMain.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
+        <video class="Fortress" id="fortressvideo" src="TossaVixtuTour360/video/FortressTossaOne.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
         <!--Video for Fortress and Ghotic church scenes end-->
 
         <!--Video for Granados scenes-->
-        <video class="granados" id="granadosoutdoorvideo" src="video/GranadosOutdoor360.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
-        <video class="granados" id="granadosindoorvideo" src="video/Granados360.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
-        <video class="granados" id="granadosoctopussyvideo" src="video/GranadosOctopussy360.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
-        <video class="granados" id="granadosoctopussysbsvideo" src="video/GranadosOctopussySlaughterSBS.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
+        <video class="granados" id="granadosoutdoorvideo" src="TossaVixtuTour360/video/GranadosOutdoor360.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
+        <video class="granados" id="granadosindoorvideo" src="TossaVixtuTour360/video/Granados360.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
+        <video class="granados" id="granadosoctopussyvideo" src="TossaVixtuTour360/video/GranadosOctopussy360.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
+        <video class="granados" id="granadosoctopussysbsvideo" src="TossaVixtuTour360/video/GranadosOctopussySlaughterSBS.mp4" preload="true" autoplay="false" loop="true" crossorigin="anonymous" webkit-playsinline controls/>
         <!--Video for Granados scenes end-->
 
         <!--Video for Granados scenes end-->
@@ -180,7 +180,7 @@
 
       <!--Sky box for the main tossa map-->
       <a-entity class="map" position="" rotation="" scale="">
-        <a-sky id="skyboxone" class="nonclickable" src="img/EveningSkyboxHDR.png" position="0.0 -1000.0 0.0" rotation="0.0 180.0 0.0"></a-sky>
+        <a-sky id="skyboxone" class="nonclickable" src="TossaVixtuTour360/img/EveningSkyboxHDR.png" position="0.0 -1000.0 0.0" rotation="0.0 180.0 0.0"></a-sky>
       </a-entity>
       <!--Sky box for the main tossa map end-->
       
