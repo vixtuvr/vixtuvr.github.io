@@ -676,9 +676,10 @@
                 Variable declaration
         /*****************************************************************************************************************************************************************************************
         */
-        //Variable to define 1000 milisecs
-        var myInterval = setInterval(myInterval, 1000);
-        var mySeconds = 0.0;
+        //Window setInterval() Method
+        //The setInterval() method calls a function or evaluates an expression at specified intervals (in milliseconds)
+        var myTimeLoop = setInterval(myTimer, 1000);//Call the function myTimer() once per second
+        var mySeconds = 0.0;//Seconds counter to terminate the call to function myTimer and to display a count down timer
         var text = document.querySelector('#myplaybutton');
         //console.log(text);
         var scene = document.querySelector('a-scene');
@@ -824,7 +825,7 @@
           if(!isMobile) text.innerHTML = "Waiting " + (4 - mySeconds);
           else text.innerHTML = "Click VR button to begin your experience";
           //alert(seconds);
-          if(seconds==1) //switch case is more scalable
+          if(mySeconds==1) //switch case is more scalable
           {
             //waiting to load html component
             var vr = document.querySelector(".a-enter-vr-button");// a-enter-vr-button
@@ -846,12 +847,12 @@
               vr.style.display = "none";
             }
           }
-          else if (seconds == 4 && !isMobile)
+          else if (mySeconds == 4 && !isMobile)
           {
             text.innerHTML = "START";
             run();
           }
-          else if (seconds == 5)
+          else if (mySeconds == 5)
           {
             //window.clearInterval(interval);
             text.style.display = "none";
