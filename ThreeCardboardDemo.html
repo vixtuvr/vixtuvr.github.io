@@ -85,8 +85,8 @@
                 var light = new THREE.HemisphereLight(0x777777, 0x000000, 0.6);
                 scene.add(light);
 
-                var texture = THREE.ImageUtils.loadTexture('Three/img/JordiCheckerBoard.png');//Deprecated but still works
-		//var texture = THREE.TextureLoader().load('Three/img/JordiCheckerBoard.png');
+                //var texture = THREE.ImageUtils.loadTexture('Three/img/JordiCheckerBoard.png');//Deprecated but still works
+		var texture = THREE.TextureLoader().load('Three/img/JordiCheckerBoard.png');
                 texture.wrapS = THREE.RepeatWrapping;
                 texture.wrapT = THREE.RepeatWrapping;
                 texture.repeat = new THREE.Vector2(50, 50);
