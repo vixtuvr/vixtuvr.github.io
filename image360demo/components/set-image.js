@@ -17,7 +17,9 @@ AFRAME.registerComponent('set-image', {
     var el = this.el;
 
     this.setupFadeAnimation();
-
+    
+    console.log("entering init function in set-image");
+    
     el.addEventListener(data.on, function () {
       // Fade out image.
       data.target.emit('set-image-fade');
