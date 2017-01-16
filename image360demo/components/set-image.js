@@ -37,7 +37,7 @@ AFRAME.registerComponent('set-image', {
   setupFadeAnimation: function () {
     var data = this.data;
     var targetEl = this.data.target;
-
+    console.log("entering setupFadeAnimation");
     // Only set up once.
     if (targetEl.dataset.setImageFadeSetup) { return; }
     targetEl.dataset.setImageFadeSetup = true;
